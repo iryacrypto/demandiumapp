@@ -1,0 +1,14 @@
+workflows:
+  flutter-app:
+    name: Build Flutter App
+    environment:
+      flutter: stable
+    scripts:
+      - name: Clean build cache
+        script: flutter clean
+
+      - name: Get dependencies
+        script: flutter pub get
+
+      - name: Run build (optional)
+        script: flutter build apk --release  # or ios, web, etc.
